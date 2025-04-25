@@ -13,6 +13,12 @@ class CorePage:
     def wait_for_clickable(self, locator, timeout=10):
         return WebDriverWait(self.browser, timeout).until(EC.element_to_be_clickable(locator))
 
+    def wait_for_invisible(self, locator, timeout=10):
+        return WebDriverWait(self.browser, timeout).until(EC.invisibility_of_element_located(locator))
+
+    def wait_for_condition(self, condition, timeout=10):
+        return WebDriverWait(self.browser, timeout).until(condition)
+
     def perform_click(self, locator):
         element = WebDriverWait(self.browser, 10).until(EC.presence_of_element_located(locator))
         try:
@@ -40,6 +46,13 @@ class CorePage:
 
     def get_current_url(self):
         return self.browser.current_url
+
+    def find_element(self, locator):
+        return self.browser.find_element(*locator)
+
+    def scroll_to_element(self, locator):
+        element = self.find_element(locator)
+        self.browser.execute_script("arguments[0].scrollIntoView(true);", element)
 
     def drag_and_drop_element(self, source_element, target_element):
         try:

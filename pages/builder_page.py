@@ -22,7 +22,7 @@ class BuilderPage(CorePage):
     @allure.step('Click ingredient')
     def click_ingredient(self):
         element = self.wait_for_clickable(BuilderLocators.BUN_ITEM)
-        self.browser.execute_script("arguments[0].scrollIntoView(true);", element)
+        self.scroll_to_element(BuilderLocators.BUN_ITEM)
         self.perform_click(BuilderLocators.BUN_ITEM)
 
     @allure.step('Verify ingredient details modal')
@@ -43,8 +43,8 @@ class BuilderPage(CorePage):
 
     @allure.step('Drag ingredient to burger area')
     def move_ingredient_to_burger(self):
-        source = self.browser.find_element(*BuilderLocators.BUN_ITEM)
-        target = self.browser.find_element(*BuilderLocators.BURGER_DROP_AREA)
+        source = self.find_element(BuilderLocators.BUN_ITEM)
+        target = self.find_element(BuilderLocators.BURGER_DROP_AREA)
         self.drag_and_drop_element(source, target)
 
     @allure.step('Get ingredient count')
