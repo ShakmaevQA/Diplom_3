@@ -1,0 +1,22 @@
+from selenium.webdriver.common.by import By
+
+class OrdersLocators:
+    ORDER_ITEM = (By.XPATH, '(.//a[contains(@class, "OrderHistory_link__1iNby")])[1]')
+    ORDER_DETAILS_MODAL = (By.CSS_SELECTOR, "section.Modal_modal_opened__3ISw4.Modal_modal__P3_V5")
+    CLOSE_ORDER_MODAL = (By.CSS_SELECTOR, "button.Modal_modal__close_modified__3V5XS.Modal_modal__close__TnseK")
+    ORDER_HISTORY_LINK = (By.XPATH, '//a[contains(text(),"История заказов")]')
+    HISTORY_ORDER_ID = (By.XPATH, "//p[@class='text text_type_digits-default']")
+    FEED_ORDER_ID = (By.XPATH, "(//p[@class='text text_type_digits-default'])[1]")
+    TOTAL_ORDERS_COUNT = (By.XPATH, "(//p[@class='OrderFeed_number__2MbrQ text text_type_digits-large'])[1]")
+    TODAY_ORDERS_COUNT = (By.XPATH, "(//p[@class='OrderFeed_number__2MbrQ text text_type_digits-large'])[2]")
+    ORDER_ID_MODAL = (By.XPATH, "//h2[contains(@class, 'Modal_modal__title_shadow__3ikwq') and contains(@class, 'Modal_modal__title__2L34m')]")
+    IN_PROGRESS_ORDER_ID = (By.XPATH, "//li[contains(@class, 'text') and contains(@class, 'text_type_digits-default') and contains(@class, 'mb-2')]")
+    PROFILE_LINK = (By.XPATH, '//p[contains(text(),"Личный Кабинет")]')
+    ORDERS_FEED_LINK = (By.XPATH, '//p[contains(text(),"Лента Заказов")]')
+    BUILDER_LINK = (By.XPATH, '//p[contains(text(),"Конструктор")]')
+    BUN_ITEM = (By.XPATH, './/*[@alt="Флюоресцентная булка R2-D3"]')
+    BURGER_DROP_AREA = (By.XPATH, '//section[contains(@class, "BurgerConstructor_basket")]')
+    SIGN_IN_BUTTON = (By.XPATH, '//button[contains(text(),"Войти")]')
+    EMAIL_FIELD = (By.XPATH, '//input[@name="name"]')
+    PASSWORD_FIELD = (By.XPATH, '//input[@name="Пароль"]')
+    PLACE_ORDER_BUTTON = (By.XPATH, '//button[contains(text(),"Оформить заказ")]')
